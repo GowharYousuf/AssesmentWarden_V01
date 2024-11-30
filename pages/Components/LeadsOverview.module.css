@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+    .small-text {
+      font-size: 0.875rem; /* Smaller text for mobile screens */
+    }
+    .small-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    .small-padding {
+      padding: 1rem; /* Smaller padding for compact layout */
+    }
+  }
+  
