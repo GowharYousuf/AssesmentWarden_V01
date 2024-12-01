@@ -6,7 +6,7 @@ const Table = () => {
             id: "#6775",
             name: "Test lead",
             phone: "+912312121212",
-            date:"Apr 10, 2024",
+            date: "Apr 10, 2024",
             status: "Active",
             roomReserved: "Warden Boys Life",
             checkIn: "Apr 10, 2024",
@@ -18,7 +18,7 @@ const Table = () => {
             id: "#6260",
             name: "Contract test",
             phone: "+912892738283",
-            date:"Apr 10, 2024",
+            date: "Apr 10, 2024",
             status: "Active",
             roomReserved: "Warden Boys Life",
             checkIn: "-",
@@ -30,7 +30,7 @@ const Table = () => {
             id: "#1664",
             name: "Test Lead 1121",
             phone: "+911674562323",
-            date:"Apr 10, 2024",
+            date: "Apr 10, 2024",
             status: "Payment Due",
             roomReserved: "F012,Warden Boys Life",
             checkIn: "May 23, 2024",
@@ -42,7 +42,7 @@ const Table = () => {
             id: "#610",
             name: "Test lead 124",
             phone: "+911241111111",
-            date:"Apr 10, 2024",
+            date: "Apr 10, 2024",
             status: "Reserved",
             roomReserved: "G003 ,Warden Boys Life",
             checkIn: "Mar 27, 2024",
@@ -54,7 +54,7 @@ const Table = () => {
             id: "#610",
             name: "Test lead 124",
             phone: "+911241111111",
-            date:"Apr 10, 2024",
+            date: "Apr 10, 2024",
             status: "Reserved",
             roomReserved: "G003,Warden Boys Life",
             checkIn: "Mar 27, 2024",
@@ -131,16 +131,29 @@ const Table = () => {
                                     </span>
                                 </td>
                                 <td className="p-4">
-                                {item.roomReserved.includes(",") ? (
-                                    <div>
-                                    {item.roomReserved.split(",").map((text, index) => (
-                                        <div key={index}>{text.trim()}</div>
-                                    ))}
-                                    </div>
-                                ) : (
-                                    item.roomReserved
-                                )}
-                                </td>
+    {item.roomReserved.includes(",") ? (
+        <div>
+            {item.roomReserved.split(",").map((text, index) => (
+                <div key={index}>
+                    {["F012", "G003"].includes(text.trim()) ? (
+                        <span className="font-bold">{text.trim()}</span>
+                    ) : (
+                        <span>{text.trim()}</span>
+                    )}
+                </div>
+            ))}
+        </div>
+    ) : (
+        ["F012", "G003"].includes(item.roomReserved.trim()) ? (
+            <span className="font-bold">{item.roomReserved.trim()}</span>
+        ) : (
+            <span>{item.roomReserved.trim()}</span>
+        )
+    )}
+</td>
+
+
+
 
                                 <td className="p-4">{item.checkIn}</td>
                                 <td className="p-4">{item.source}</td>

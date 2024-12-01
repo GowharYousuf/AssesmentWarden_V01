@@ -4,7 +4,7 @@ import TableFilters from "./Components/TableFilters";
 import Table from "./Components/Table";
 export default function Home() {
   return (
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+      <div className="container mx-auto px-4 ">
         <Header />
         <LeadsOverview />
         <TableFilters/>

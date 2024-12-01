@@ -22,21 +22,21 @@ const leadsData = [
     id: 3,
     count: 1,
     description: "Reserved Leads (0 beds)",
-    color: "gray-600",
+    color: "gray-500",
     iconColor: "green-600"
   },
   {
     id: 4,
     count: 4,
     description: "Total Leads in Pipeline (0 beds)",
-    color: "gray-600",
+    color: "gray-500",
     iconColor: "green-600"
   },
   {
     id: 5,
     count: 2,
     description: "Cancelled Leads",
-    color: "gray-600",
+    color: "gray-500",
     iconColor: "green-600"
   }
 ];
@@ -47,10 +47,10 @@ const LeadsOverview = () => {
       {leadsData.map((lead) => (
         <div
           key={lead.id}
-          className="bg-gray-100 rounded-lg p-4 md:p-6 flex flex-col relative flex-1 min-h-[150px] max-h-[150px]"
+          className="bg-gray-100 rounded-lg p-4 md:p-6 flex flex-col relative flex-1 min-h-[130px] max-h-[130px]"
         >
           <UserGroupIcon
-            className={`absolute top-2 right-2 h-6 md:h-8 w-6 md:w-8 text-${lead.iconColor}`}
+            className={`absolute top-2 right-2 h-6 md:h-6 w-6 md:w-8 text-${lead.iconColor} bg-green-200 rounded-lg`}
           />
           <span
             className={`text-${lead.color} text-3xl md:text-4xl font-bold self-start mt-2 md:mt-3`}
@@ -58,10 +58,11 @@ const LeadsOverview = () => {
             {lead.count}
           </span>
           <p
-            className={`text-${lead.color} text-sm md:text-base text-start mt-1 md:mt-2 self-start`}
+            className={`text-${lead.color} text-sm text-start mt-1 self-start`}
           >
             {lead.description}
           </p>
+
         </div>
       ))}
     </div>
